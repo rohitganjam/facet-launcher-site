@@ -1,0 +1,219 @@
+:root {
+  --navy: #22384F;
+  --muted: #5A6570; /* darkened from an earlier #6E7882 - that measured 4.49:1 on white, just under WCAG AA's 4.5:1; this measures ~5.9:1 */
+  --bg: #FFFFFF;
+  --bg-soft: #F4F5F7;
+  --border: #E2E5E9;
+  --blue: #375381;
+  --teal: #2C6860;
+  --green: #2C7D52;
+  --radius: 16px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--navy);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+a { color: var(--blue); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .btn, nav.links a { transition: background 200ms ease, color 200ms ease; }
+}
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Nav */
+header.site-nav {
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+.site-nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--navy);
+}
+.brand svg { width: 28px; height: 28px; }
+nav.links { display: flex; gap: 12px; }
+nav.links a {
+  color: var(--navy); font-weight: 500; font-size: 15px;
+  padding: 10px 8px; border-radius: 8px;
+}
+nav.links a.active { color: var(--blue); }
+nav.links a:hover { background: var(--bg-soft); text-decoration: none; }
+nav.links .short-label { display: none; }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 72px 24px 48px;
+}
+.hero .mark { width: 96px; height: 96px; margin-bottom: 24px; }
+.hero h1 {
+  font-size: 44px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  letter-spacing: -0.5px;
+}
+.hero p.tagline {
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 560px;
+  margin: 0 auto 32px;
+}
+.cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+.btn-primary { background: var(--navy); color: white; }
+.btn-primary:hover { background: #1a2c3d; text-decoration: none; }
+.btn-secondary { background: var(--bg-soft); color: var(--navy); border: 1px solid var(--border); }
+.btn-secondary:hover { background: #EBEDF0; text-decoration: none; }
+
+/* Highlight cards */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 24px 0 72px;
+}
+.highlight-card {
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+}
+.highlight-card .dot {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  display: flex; align-items: center; justify-content: center;
+  color: white; font-weight: 700; font-size: 16px;
+}
+.highlight-card h3 { font-size: 17px; margin: 0 0 8px; }
+.highlight-card p { font-size: 14px; color: var(--muted); margin: 0; }
+
+/* Feature sections */
+.feature-section {
+  padding: 64px 0;
+  border-top: 1px solid var(--border);
+}
+.feature-section .inner {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+}
+.feature-section.reverse .inner { flex-direction: row-reverse; }
+.feature-text { flex: 1; }
+.feature-text .eyebrow {
+  font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 10px; display: block;
+}
+.feature-text h2 { font-size: 30px; margin: 0 0 14px; letter-spacing: -0.3px; }
+.feature-text p { font-size: 16px; color: var(--muted); margin: 0 0 12px; }
+.feature-text ul { padding-left: 20px; color: var(--muted); font-size: 15px; }
+.feature-text li { margin-bottom: 6px; }
+
+.shots { flex: 1; display: flex; gap: 16px; justify-content: center; align-items: flex-start; }
+.shots.single { justify-content: center; }
+.shot-frame {
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  max-width: 240px;
+}
+.shot-frame img { display: block; width: 100%; height: auto; }
+.shot-frame.small { max-width: 190px; margin-top: 40px; }
+
+/* Privacy summary callout, reused on privacy page */
+.summary {
+  background: var(--bg-soft);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+/* Standalone "see more" prompt, e.g. after Home's single feature preview */
+.see-more {
+  text-align: center;
+  padding: 0 24px 64px;
+}
+
+/* Closing CTA */
+.closing-cta {
+  text-align: center;
+  padding: 64px 24px;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+}
+.closing-cta h2 { font-size: 28px; margin: 0 0 10px; }
+.closing-cta p { color: var(--muted); margin: 0 0 28px; }
+
+/* Footer */
+footer.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+  margin-top: 40px;
+}
+footer.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+footer.site-footer a { color: var(--muted); margin-left: 20px; }
+footer.site-footer a:first-child { margin-left: 0; }
+
+/* Policy page typography */
+.policy h1 { font-size: 30px; margin-bottom: 4px; }
+.policy .updated { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+.policy h2 { font-size: 20px; margin-top: 34px; }
+.policy code { background: var(--bg-soft); padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+.policy ul { padding-left: 20px; }
+.policy li { margin-bottom: 8px; color: var(--navy); }
+.policy-main { padding: 48px 0 80px; max-width: 760px; }
+
+@media (max-width: 860px) {
+  .highlights { grid-template-columns: repeat(2, 1fr); }
+  .feature-section .inner, .feature-section.reverse .inner { flex-direction: column; }
+  .shots { flex-wrap: wrap; }
+  .hero h1 { font-size: 34px; }
+  nav.links { gap: 4px; }
+}
+
+@media (max-width: 480px) {
+  .brand .brand-text { display: none; }
+  nav.links a { font-size: 14px; padding: 8px 6px; }
+  nav.links .full-label { display: none; }
+  nav.links .short-label { display: inline; }
+}
