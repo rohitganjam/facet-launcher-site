@@ -78,7 +78,7 @@ highlight_html = "\n".join(f'''    <div class="highlight-card">
 index_body = f'''<section class="hero">
   <div class="wrap">
     <div class="mark" style="margin:0 auto 24px">{mark_svg(96)}</div>
-    <h1>A launcher built around your profiles</h1>
+    <h1>A launcher built around how you use your phone</h1>
     <p class="tagline">Facet Launcher is a fast, minimal Android home screen that adapts to how you actually use your phone &mdash; work, personal, focus &mdash; each its own profile.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="features.html">See features</a>
@@ -168,7 +168,7 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
   <div class="wrap inner">
     <div class="feature-text">
       <span class="eyebrow">Widget hub</span>
-      <h2>A real home for widgets</h2>
+      <h2>Widgets have their own home</h2>
       <p>Widgets get their own dedicated surface &mdash; a swipe away from your home screen &mdash; instead of crowding your app list. Add up to 20, drag to reposition, and resize freely.</p>
     </div>
     <div class="shots single">
@@ -236,7 +236,7 @@ policy_body = '''<main class="wrap policy policy-main">
 </main>'''
 
 pages = {
-    "index.html": page("Facet Launcher", "A minimal Android launcher built around profiles &mdash; switch your whole home screen setup in one tap.", "home", index_body + CTA_SECTION),
+    "index.html": page("Facet Launcher", "A minimal Android launcher built around how you use your phone &mdash; switch your whole setup in one tap.", "home", index_body + CTA_SECTION),
     "features.html": page("Features — Facet Launcher", "Profiles, 30+ clock styles, a smart app drawer, and a dedicated widget hub.", "features", features_body + CTA_SECTION),
     "privacy-policy.html": page("Privacy Policy — Facet Launcher", "Facet Launcher has no internet access and collects no data. Read the full privacy policy.", "privacy", policy_body),
 }
