@@ -22,21 +22,23 @@ def nav(active):
   </div>
 </header>'''
 
-CTA_SECTION = '''<section class="closing-cta">
+DISCORD_INVITE = "https://discord.gg/BRjwWZ23E"
+
+CTA_SECTION = f'''<section class="closing-cta">
   <div class="wrap">
-    <h2>Ready to make it yours?</h2>
-    <p>Facet Launcher is in active development. Follow along or try it now on GitHub.</p>
+    <h2>Join the community</h2>
+    <p>Facet Launcher is in active development. Come chat, share feedback, or follow along on Discord.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="https://github.com/rohitganjam/facet-launcher">View on GitHub</a>
+      <a class="btn btn-primary" href="{DISCORD_INVITE}">Join Discord</a>
     </div>
   </div>
 </section>'''
 
-FOOTER = '''<footer class="site-footer">
+FOOTER = f'''<footer class="site-footer">
   <div class="wrap">
     <span>&copy; 2026 Facet Launcher.</span>
     <div>
-      <a href="https://github.com/rohitganjam/facet-launcher">GitHub</a>
+      <a href="{DISCORD_INVITE}">Discord</a>
       <a href="privacy-policy.html">Privacy Policy</a>
     </div>
   </div>
@@ -82,7 +84,7 @@ index_body = f'''<section class="hero">
     <p class="tagline">Facet Launcher is a fast, minimal Android home screen that adapts to how you actually use your phone &mdash; work, personal, focus &mdash; each its own facet.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="features.html">See features</a>
-      <a class="btn btn-secondary" href="https://github.com/rohitganjam/facet-launcher">View on GitHub</a>
+      <a class="btn btn-secondary" href="{DISCORD_INVITE}">Join Discord</a>
     </div>
   </div>
 </section>
@@ -97,7 +99,7 @@ index_body = f'''<section class="hero">
       <span class="eyebrow">Facets</span>
       <h2>Your phone, on switch</h2>
       <p>Set up a Work facet with only the apps you need at your desk. A Personal facet with everything else. A Focus facet with almost nothing at all. Swipe to browse live previews of each, tap to switch instantly.</p>
-      <p>Every facet can override its own apps list, dock, clock style, and calendar &mdash; or simply inherit the defaults.</p>
+      <p>Every facet can override its own apps list, dock, clock style and calendar, or simply inherit the defaults.</p>
     </div>
     <div class="shots single">
       <div class="shot-frame"><img src="assets/screenshots/facets.png" alt="Facet Launcher's facet switcher showing two facets side by side"></div>
@@ -114,7 +116,7 @@ index_body = f'''<section class="hero">
 features_body = f'''<section class="hero" style="padding:56px 24px 24px">
   <div class="wrap">
     <h1 style="font-size:36px">Everything Facet Launcher does</h1>
-    <p class="tagline" style="margin-bottom:0">A closer look at what's actually built &mdash; no roadmap items, no "coming soon."</p>
+    <p class="tagline" style="margin-bottom:0">A closer look at what's actually built and available today.</p>
   </div>
 </section>
 
@@ -123,7 +125,7 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
     <div class="feature-text">
       <span class="eyebrow">Facets</span>
       <h2>Switch your whole setup in one tap</h2>
-      <p>Up to three facets, each a fully independent launcher configuration: its own favorites, list mode, clock style, and calendar settings. Long-press an empty part of the home screen to browse live preview cards and switch instantly &mdash; or drop into Settings to reorder, rename, or fine-tune each one.</p>
+      <p>Up to three facets, each a fully independent launcher configuration: its own favorites, list mode, clock style, and calendar settings. Long-press an empty part of the home screen to browse live preview cards and switch instantly, or drop into Settings to reorder, rename, or fine-tune each one.</p>
       <ul>
         <li>Live preview cards render each facet's real clock, favorites, and calendar</li>
         <li>Per-facet override for apps list, dock content, clock &amp; calendar style</li>
@@ -140,7 +142,7 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
     <div class="feature-text">
       <span class="eyebrow">Home &amp; clock</span>
       <h2>30+ clock styles, fully re-themeable</h2>
-      <p>From clean typographic layouts to shape-based faceted marks, every clock template supports its own font, color, weight, and alignment &mdash; independent of the calendar strip beneath it. Drag to resize and reposition, or hand-pick a style per facet.</p>
+      <p>From clean typographic layouts to shape-based marks, every clock template supports its own font, color, weight and alignment,  independent of the calendar strip beneath it. Drag to resize and reposition, or hand-pick a style per facet.</p>
     </div>
     <div class="shots">
       <div class="shot-frame"><img src="assets/screenshots/clock-gallery-2.png" alt="Clock style gallery showing Chip, Duotone Overlap, and Corner Frame templates"></div>
@@ -154,7 +156,7 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
     <div class="feature-text">
       <span class="eyebrow">App drawer</span>
       <h2>List or grid, your call</h2>
-      <p>A letter-indexed list with a locale-aware alphabet rail, or a dense grid &mdash; switch anytime. Type to search across your apps and, optionally, your contacts, with quick actions like call or message right from the result.</p>
+      <p>A letter-indexed list with an alphabet rail for easy navigation, or a dense grid if you prefer. Type to search across your apps and, optionally, your Settings and Contacts, with quick actions like call or message right from the result.</p>
     </div>
     <div class="shots">
       <div class="shot-frame"><img src="assets/screenshots/drawer-list.png" alt="App drawer in list view with the alphabet rail"></div>
@@ -181,7 +183,7 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
     <div class="feature-text">
       <span class="eyebrow">Privacy</span>
       <h2>Nothing leaves your device</h2>
-      <p>Facet Launcher doesn't request internet access at all. There's no server, no account, no analytics, no ads &mdash; every feature above runs entirely on your phone.</p>
+      <p>Facet Launcher doesn't request internet access at all. There's no server, no account, no analytics, no ads. Everything runs entirely on your phone.</p>
       <p><a href="privacy-policy.html">Read the full privacy policy &rarr;</a></p>
     </div>
     <div class="shots single">
@@ -231,7 +233,7 @@ policy_body = '''<main class="wrap policy policy-main">
   <p>If this policy changes, an updated version will be posted at this same URL with a revised "Last updated" date.</p>
 
   <h2>Contact</h2>
-  <p>Questions about this policy can be sent to the developer via the contact details listed on the <a href="https://github.com/rohitganjam/facet-launcher">Facet Launcher GitHub repository</a>.</p>
+  <p>Questions about this policy can be sent to the developer via the <a href="https://discord.gg/BRjwWZ23E">Facet Launcher Discord server</a>.</p>
 </main>'''
 
 pages = {
