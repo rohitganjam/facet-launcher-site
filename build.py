@@ -64,10 +64,10 @@ def page(title, description, nav_key, body):
 
 # ---------- index.html ----------
 highlights = [
-    ("P", "#375381", "Profiles", "Up to 3 full personas &mdash; each with its own apps, dock, clock, and calendar &mdash; switched with a swipe."),
+    ("F", "#375381", "Facets", "Up to 3 full personas &mdash; each with its own apps, dock, clock, and calendar &mdash; switched with a swipe."),
     ("C", "#2C6860", "30+ clock styles", "From minimal typography to shape-based faceted marks, each fully re-themeable."),
     ("A", "#2C7D52", "Smart app drawer", "List or grid, an alphabet rail, and search across apps and contacts."),
-    ("H", "#22384F", "Widget hub", "A dedicated space for widgets &mdash; drag, resize, and arrange freely."),
+    ("W", "#22384F", "Widgets", "A dedicated space for widgets &mdash; drag, resize, and arrange freely."),
 ]
 highlight_html = "\n".join(f'''    <div class="highlight-card">
       <div class="dot" style="background:{color}">{letter}</div>
@@ -79,7 +79,7 @@ index_body = f'''<section class="hero">
   <div class="wrap">
     <div class="mark" style="margin:0 auto 24px">{mark_svg(96)}</div>
     <h1>A launcher built around how you use your phone</h1>
-    <p class="tagline">Facet Launcher is a fast, minimal Android home screen that adapts to how you actually use your phone &mdash; work, personal, focus &mdash; each its own profile.</p>
+    <p class="tagline">Facet Launcher is a fast, minimal Android home screen that adapts to how you actually use your phone &mdash; work, personal, focus &mdash; each its own facet.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="features.html">See features</a>
       <a class="btn btn-secondary" href="https://github.com/rohitganjam/facet-launcher">View on GitHub</a>
@@ -94,13 +94,13 @@ index_body = f'''<section class="hero">
 <section class="feature-section">
   <div class="wrap inner">
     <div class="feature-text">
-      <span class="eyebrow">Profiles</span>
+      <span class="eyebrow">Facets</span>
       <h2>Your phone, on switch</h2>
-      <p>Set up a Work profile with only the apps you need at your desk. A Personal profile with everything else. A Focus profile with almost nothing at all. Swipe to browse live previews of each, tap to switch instantly.</p>
-      <p>Every profile can override its own apps list, dock, clock style, and calendar &mdash; or simply inherit the defaults.</p>
+      <p>Set up a Work facet with only the apps you need at your desk. A Personal facet with everything else. A Focus facet with almost nothing at all. Swipe to browse live previews of each, tap to switch instantly.</p>
+      <p>Every facet can override its own apps list, dock, clock style, and calendar &mdash; or simply inherit the defaults.</p>
     </div>
     <div class="shots single">
-      <div class="shot-frame"><img src="assets/screenshots/profiles.png" alt="Facet Launcher's profile switcher showing two profiles side by side"></div>
+      <div class="shot-frame"><img src="assets/screenshots/facets.png" alt="Facet Launcher's facet switcher showing two facets side by side"></div>
     </div>
   </div>
 </section>
@@ -118,20 +118,19 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
   </div>
 </section>
 
-<section class="feature-section" id="profiles" style="border-top:none">
+<section class="feature-section" id="facets" style="border-top:none">
   <div class="wrap inner">
     <div class="feature-text">
-      <span class="eyebrow">Profiles</span>
+      <span class="eyebrow">Facets</span>
       <h2>Switch your whole setup in one tap</h2>
-      <p>Up to three profiles, each a fully independent launcher configuration: its own favorites, list mode, clock style, and calendar settings. Long-press an empty part of the home screen to browse live preview cards and switch instantly &mdash; or drop into Settings to reorder, rename, or fine-tune each one.</p>
+      <p>Up to three facets, each a fully independent launcher configuration: its own favorites, list mode, clock style, and calendar settings. Long-press an empty part of the home screen to browse live preview cards and switch instantly &mdash; or drop into Settings to reorder, rename, or fine-tune each one.</p>
       <ul>
-        <li>Live preview cards render each profile's real clock, favorites, and calendar</li>
-        <li>Per-profile override for apps list, dock content, clock &amp; calendar style</li>
-        <li>Dock stays shared across all profiles by design</li>
+        <li>Live preview cards render each facet's real clock, favorites, and calendar</li>
+        <li>Per-facet override for apps list, dock content, clock &amp; calendar style</li>
       </ul>
     </div>
     <div class="shots single">
-      <div class="shot-frame"><img src="assets/screenshots/profiles.png" alt="Two profile preview cards side by side in the profile switcher"></div>
+      <div class="shot-frame"><img src="assets/screenshots/facets.png" alt="Two facet preview cards side by side in the facet switcher"></div>
     </div>
   </div>
 </section>
@@ -141,7 +140,7 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
     <div class="feature-text">
       <span class="eyebrow">Home &amp; clock</span>
       <h2>30+ clock styles, fully re-themeable</h2>
-      <p>From clean typographic layouts to shape-based faceted marks, every clock template supports its own font, color, weight, and alignment &mdash; independent of the calendar strip beneath it. Drag to resize and reposition, or hand-pick a style per profile.</p>
+      <p>From clean typographic layouts to shape-based faceted marks, every clock template supports its own font, color, weight, and alignment &mdash; independent of the calendar strip beneath it. Drag to resize and reposition, or hand-pick a style per facet.</p>
     </div>
     <div class="shots">
       <div class="shot-frame"><img src="assets/screenshots/clock-gallery-2.png" alt="Clock style gallery showing Chip, Duotone Overlap, and Corner Frame templates"></div>
@@ -164,15 +163,15 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
   </div>
 </section>
 
-<section class="feature-section reverse" id="hub">
+<section class="feature-section reverse" id="widgets">
   <div class="wrap inner">
     <div class="feature-text">
-      <span class="eyebrow">Widget hub</span>
+      <span class="eyebrow">Widgets</span>
       <h2>Widgets have their own home</h2>
       <p>Widgets get their own dedicated surface &mdash; a swipe away from your home screen &mdash; instead of crowding your app list. Add up to 20, drag to reposition, and resize freely.</p>
     </div>
     <div class="shots single">
-      <div class="shot-frame"><img src="assets/screenshots/hub.png" alt="Facet Hub showing a calendar and music player widget"></div>
+      <div class="shot-frame"><img src="assets/screenshots/widgets.png" alt="The Widgets screen showing a calendar and music player widget"></div>
     </div>
   </div>
 </section>
@@ -201,7 +200,7 @@ policy_body = '''<main class="wrap policy policy-main">
   </div>
 
   <h2>What this app is</h2>
-  <p>Facet Launcher is a home-screen launcher for Android. It replaces your phone's default home screen with app organization, a clock, and calendar widgets, all customizable through profiles.</p>
+  <p>Facet Launcher is a home-screen launcher for Android. It replaces your phone's default home screen with app organization, a clock, and calendar widgets, all customizable through facets.</p>
 
   <h2>Data collection and transmission</h2>
   <p>Facet Launcher does not request the <code>INTERNET</code> permission. The app cannot make network requests, and has no server, backend, or cloud component of any kind. Every feature described below runs entirely on your device.</p>
@@ -217,7 +216,7 @@ policy_body = '''<main class="wrap policy policy-main">
   </ul>
 
   <h2>Data storage</h2>
-  <p>Your settings, profiles, dock and favorites layout, and widget placements are stored in a local database on your device, using Android's standard app-private storage. This data is not accessible to other apps and is not transmitted anywhere. Uninstalling Facet Launcher removes it, following normal Android behavior.</p>
+  <p>Your settings, facets, dock and favorites layout, and widget placements are stored in a local database on your device, using Android's standard app-private storage. This data is not accessible to other apps and is not transmitted anywhere. Uninstalling Facet Launcher removes it, following normal Android behavior.</p>
 
   <h2>Backup and restore</h2>
   <p>If you use the app's backup feature, it creates a JSON file containing your settings and layout, which you choose where to save using Android's own file picker (for example, to your device storage or a cloud storage app you've installed). Facet Launcher does not upload this file anywhere itself &mdash; where it ends up is entirely controlled by you, through the system file picker.</p>
@@ -237,7 +236,7 @@ policy_body = '''<main class="wrap policy policy-main">
 
 pages = {
     "index.html": page("Facet Launcher", "A minimal Android launcher built around how you use your phone &mdash; switch your whole setup in one tap.", "home", index_body + CTA_SECTION),
-    "features.html": page("Features — Facet Launcher", "Profiles, 30+ clock styles, a smart app drawer, and a dedicated widget hub.", "features", features_body + CTA_SECTION),
+    "features.html": page("Features — Facet Launcher", "Facets, 30+ clock styles, a smart app drawer, and a dedicated widgets screen.", "features", features_body + CTA_SECTION),
     "privacy-policy.html": page("Privacy Policy — Facet Launcher", "Facet Launcher has no internet access and collects no data. Read the full privacy policy.", "privacy", policy_body),
 }
 
