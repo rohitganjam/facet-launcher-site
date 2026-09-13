@@ -81,7 +81,7 @@ index_body = f'''<section class="hero">
   <div class="wrap">
     <div class="mark" style="margin:0 auto 24px">{mark_svg(96)}</div>
     <h1>A launcher built around how you use your phone</h1>
-    <p class="tagline">Facet Launcher is a fast, minimal Android home screen that adapts to how you actually use your phone &mdash; work, personal, focus &mdash; each its own facet.</p>
+    <p class="tagline">Facet Launcher is a fast, minimal Android home screen that adapts to how you actually use your phone - work, personal or focus, each its own facet.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="features.html">See features</a>
       <a class="btn btn-secondary" href="{DISCORD_INVITE}">Join Discord</a>
