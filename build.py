@@ -66,10 +66,10 @@ def page(title, description, nav_key, body):
 
 # ---------- index.html ----------
 highlights = [
-    ("F", "#375381", "Facets", "Up to 3 full personas &mdash; each with its own apps, dock, clock, and calendar &mdash; switched with a swipe."),
+    ("F", "#375381", "Facets", "Up to 3 full personas, each with its own apps, dock, clock, and calendar, switched with a swipe."),
     ("C", "#2C6860", "30+ clock styles", "From minimal typography to shape-based faceted marks, each fully re-themeable."),
     ("A", "#2C7D52", "Smart app drawer", "List or grid, an alphabet rail, and search across apps and contacts."),
-    ("W", "#22384F", "Widgets", "A dedicated space for widgets &mdash; drag, resize, and arrange freely."),
+    ("W", "#22384F", "Widgets", "A dedicated space for widgets. Drag, resize, and arrange freely."),
 ]
 highlight_html = "\n".join(f'''    <div class="highlight-card">
       <div class="dot" style="background:{color}">{letter}</div>
@@ -170,7 +170,7 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
     <div class="feature-text">
       <span class="eyebrow">Widgets</span>
       <h2>Widgets have their own home</h2>
-      <p>Widgets get their own dedicated surface &mdash; a swipe away from your home screen &mdash; instead of crowding your app list. Add up to 20, drag to reposition, and resize freely.</p>
+      <p>Widgets get their own dedicated surface a swipe away from your home screen, instead of crowding your app list. Add up to 20, drag to reposition, and resize freely.</p>
     </div>
     <div class="shots single">
       <div class="shot-frame"><img src="assets/screenshots/widgets.png" alt="The Widgets screen showing a calendar and music player widget"></div>
@@ -194,11 +194,11 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
 
 # ---------- privacy-policy.html ----------
 policy_body = '''<main class="wrap policy policy-main">
-  <h1>Facet Launcher &mdash; Privacy Policy</h1>
+  <h1>Facet Launcher Privacy Policy</h1>
   <p class="updated">Last updated: September 12, 2026</p>
 
   <div class="summary">
-    <strong>In short:</strong> Facet Launcher does not have internet access. Nothing you do in the app &mdash; your apps, contacts, calendar, usage patterns, notifications, or settings &mdash; ever leaves your device. There are no accounts, no ads, no analytics, and no third-party tracking of any kind.
+    <strong>In short:</strong> Facet Launcher does not have internet access. Nothing you do in the app - your apps, contacts, calendar, usage patterns, notifications, or settings, ever leaves your device. There are no accounts, no ads, no analytics, and no third-party tracking of any kind.
   </div>
 
   <h2>What this app is</h2>
@@ -209,19 +209,19 @@ policy_body = '''<main class="wrap policy policy-main">
 
   <h2>Permissions the app uses, and why</h2>
   <ul>
-    <li><strong>Usage access</strong> (<code>PACKAGE_USAGE_STATS</code>) &mdash; powers the app drawer's optional "Most used" sort, which ranks your installed apps by how often you open them. This ranking is computed on-device each time it's shown and is never stored beyond what's needed to display it, or sent anywhere.</li>
-    <li><strong>Calendar</strong> (<code>READ_CALENDAR</code>) &mdash; lets the home screen show your upcoming events, if you turn this on in Settings. Calendar data is read directly from your device's calendar provider and displayed locally; it is never copied, stored separately, or transmitted.</li>
-    <li><strong>Contacts</strong> (<code>READ_CONTACTS</code>) &mdash; powers an optional contact search feature in the app drawer, if you turn it on in Settings. Contact data is queried on-device at search time and never stored or transmitted.</li>
-    <li><strong>Notification access</strong> &mdash; powers optional app-icon notification badges. The app reads only which app a notification came from and how many are unread, never notification content, and never stores or transmits this beyond what's needed to draw the badge.</li>
-    <li><strong>Uninstall shortcut</strong> (<code>REQUEST_DELETE_PACKAGES</code>) &mdash; lets you uninstall an app from its long-press menu. This opens Android's own uninstall confirmation dialog; the app never uninstalls anything without your explicit confirmation in that system dialog.</li>
-    <li><strong>Expand notification shade</strong> (<code>EXPAND_STATUS_BAR</code>) &mdash; lets a swipe-down gesture on the home screen open your notification shade, the same way it would on any home screen.</li>
+    <li><strong>Usage access</strong> (<code>PACKAGE_USAGE_STATS</code>) - powers the app drawer's optional "Most used" sort, which ranks your installed apps by how often you open them. This ranking is computed on-device each time it's shown and is never stored beyond what's needed to display it, or sent anywhere.</li>
+    <li><strong>Calendar</strong> (<code>READ_CALENDAR</code>) - lets the home screen show your upcoming events, if you turn this on in Settings. Calendar data is read directly from your device's calendar provider and displayed locally; it is never copied, stored separately, or transmitted.</li>
+    <li><strong>Contacts</strong> (<code>READ_CONTACTS</code>) - powers an optional contact search feature in the app drawer, if you turn it on in Settings. Contact data is queried on-device at search time and never stored or transmitted.</li>
+    <li><strong>Notification access</strong> - powers optional app-icon notification badges. The app reads only which app a notification came from and how many are unread, never notification content, and never stores or transmits this beyond what's needed to draw the badge.</li>
+    <li><strong>Uninstall shortcut</strong> (<code>REQUEST_DELETE_PACKAGES</code>) - lets you uninstall an app from its long-press menu. This opens Android's own uninstall confirmation dialog; the app never uninstalls anything without your explicit confirmation in that system dialog.</li>
+    <li><strong>Expand notification shade</strong> (<code>EXPAND_STATUS_BAR</code>) - lets a swipe-down gesture on the home screen open your notification shade, the same way it would on any home screen.</li>
   </ul>
 
   <h2>Data storage</h2>
   <p>Your settings, facets, dock and favorites layout, and widget placements are stored in a local database on your device, using Android's standard app-private storage. This data is not accessible to other apps and is not transmitted anywhere. Uninstalling Facet Launcher removes it, following normal Android behavior.</p>
 
   <h2>Backup and restore</h2>
-  <p>If you use the app's backup feature, it creates a JSON file containing your settings and layout, which you choose where to save using Android's own file picker (for example, to your device storage or a cloud storage app you've installed). Facet Launcher does not upload this file anywhere itself &mdash; where it ends up is entirely controlled by you, through the system file picker.</p>
+  <p>If you use the app's backup feature, it creates a JSON file containing your settings and layout, which you choose where to save using Android's own file picker (for example, to your device storage or a cloud storage app you've installed). Facet Launcher does not upload this file anywhere itself. Where it ends up is entirely controlled by you, through the system file picker.</p>
 
   <h2>Third parties</h2>
   <p>Facet Launcher does not integrate any third-party analytics, advertising, or crash-reporting services. No data is shared with any third party, because no data leaves your device in the first place.</p>
@@ -237,7 +237,7 @@ policy_body = '''<main class="wrap policy policy-main">
 </main>'''
 
 pages = {
-    "index.html": page("Facet Launcher", "A minimal Android launcher built around how you use your phone &mdash; switch your whole setup in one tap.", "home", index_body + CTA_SECTION),
+    "index.html": page("Facet Launcher", "A minimal Android launcher built around how you use your phone. Switch your whole setup in one tap.", "home", index_body + CTA_SECTION),
     "features.html": page("Features — Facet Launcher", "Facets, 30+ clock styles, a smart app drawer, and a dedicated widgets screen.", "features", features_body + CTA_SECTION),
     "privacy-policy.html": page("Privacy Policy — Facet Launcher", "Facet Launcher has no internet access and collects no data. Read the full privacy policy.", "privacy", policy_body),
 }
