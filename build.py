@@ -195,7 +195,7 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
 # ---------- privacy-policy.html ----------
 policy_body = '''<main class="wrap policy policy-main">
   <h1>Facet Launcher Privacy Policy</h1>
-  <p class="updated">Last updated: October 7, 2026</p>
+  <p class="updated">Last updated: October 8, 2026</p>
 
   <div class="summary">
     <strong>In short:</strong> Facet Launcher does not have internet access. Nothing you do in the app - your apps, contacts, calendar, usage patterns, notifications, or settings, ever leaves your device. There are no accounts, no ads, no analytics, and no third-party tracking of any kind.
@@ -220,6 +220,9 @@ policy_body = '''<main class="wrap policy policy-main">
     <li><strong>Network and Wi-Fi state</strong> (<code>ACCESS_NETWORK_STATE</code>, <code>ACCESS_WIFI_STATE</code>) - lets Wi-Fi automation rules tell whether you are connected to Wi-Fi. These do not give the app internet access.</li>
   </ul>
 
+  <h2>Facet Pro purchase</h2>
+  <p>Facet Pro is an optional one-time purchase. It is handled entirely by Google Play: the app asks the Google Play Store app on your phone whether your Google account owns Pro, and Google handles payment, receipts and refunds under its own terms and privacy policy. Facet Launcher never sees your payment details and has no server of its own. The app remembers on your device only whether Pro is unlocked. It still does not request the <code>INTERNET</code> permission.</p>
+
   <h2>Data storage</h2>
   <p>Your settings, facets, dock and favorites layout, widget placements, and facet automation rules are stored in a local database on your device, using Android's standard app-private storage. This data is not accessible to other apps and is not transmitted anywhere. Uninstalling Facet Launcher removes it, following normal Android behavior.</p>
 
@@ -227,7 +230,7 @@ policy_body = '''<main class="wrap policy policy-main">
   <p>If you use the app's backup feature, it creates a JSON file containing your settings and layout, which you choose where to save using Android's own file picker (for example, to your device storage or a cloud storage app you've installed). Facet Launcher does not upload this file anywhere itself. Where it ends up is entirely controlled by you, through the system file picker.</p>
 
   <h2>Third parties</h2>
-  <p>Facet Launcher does not integrate any third-party analytics, advertising, or crash-reporting services. No data is shared with any third party, because no data leaves your device in the first place.</p>
+  <p>Facet Launcher does not integrate any third-party analytics, advertising, or crash-reporting services. The only outside service involved is Google Play, if you choose to buy Facet Pro. No data is shared with any third party, because no data leaves your device in the first place.</p>
 
   <h2>Children's privacy</h2>
   <p>Facet Launcher does not knowingly collect any data from anyone, including children, since the app does not collect or transmit data at all.</p>
