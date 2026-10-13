@@ -22,7 +22,7 @@
 </header>
 <main class="wrap policy policy-main">
   <h1>Facet Launcher Privacy Policy</h1>
-  <p class="updated">Last updated: October 8, 2026</p>
+  <p class="updated">Last updated: October 13, 2026</p>
 
   <div class="summary">
     <strong>In short:</strong> Facet Launcher does not have internet access. Nothing you do in the app - your apps, contacts, calendar, usage patterns, notifications, or settings, ever leaves your device. There are no accounts, no ads, no analytics, and no third-party tracking of any kind.
@@ -39,7 +39,7 @@
     <li><strong>Usage access</strong> (<code>PACKAGE_USAGE_STATS</code>) - powers the app drawer's optional "Most used" sort, which ranks your installed apps by how often you open them. This ranking is computed on-device each time it's shown and is never stored beyond what's needed to display it, or sent anywhere.</li>
     <li><strong>Calendar</strong> (<code>READ_CALENDAR</code>) - lets the home screen show your upcoming events, if you turn this on in Settings. Calendar data is read directly from your device's calendar provider and displayed locally; it is never copied, stored separately, or transmitted.</li>
     <li><strong>Contacts</strong> (<code>READ_CONTACTS</code>) - powers an optional contact search feature in the app drawer, if you turn it on in Settings. Contact data is queried on-device at search time and never stored or transmitted.</li>
-    <li><strong>Notification access</strong> - powers optional app-icon notification badges. The app reads only which app a notification came from and how many are unread, never notification content, and never stores or transmits this beyond what's needed to draw the badge.</li>
+    <li><strong>Notification access</strong> - powers optional app-icon notification badges and the optional media player on the home screen. For badges, the app reads only which app a notification came from and how many are unread, never notification content. For the media player, it reads the title, artist, album art and playback state of the media that is playing, and whether that app has a media notification showing, so it can draw the player and its controls. None of this is stored beyond what's needed to draw the screen, or transmitted.</li>
     <li><strong>Uninstall shortcut</strong> (<code>REQUEST_DELETE_PACKAGES</code>) - lets you uninstall an app from its long-press menu. This opens Android's own uninstall confirmation dialog; the app never uninstalls anything without your explicit confirmation in that system dialog.</li>
     <li><strong>Expand notification shade</strong> (<code>EXPAND_STATUS_BAR</code>) - lets a swipe-down gesture on the home screen open your notification shade, the same way it would on any home screen.</li>
     <li><strong>Bluetooth</strong> (<code>BLUETOOTH_CONNECT</code>) - used only by the optional facet automation rules, to list your paired devices and to notice when a device you picked connects or disconnects. Android asks you when you choose a Bluetooth rule. The device you pick is saved on your device inside that rule and never transmitted.</li>

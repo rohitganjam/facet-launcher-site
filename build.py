@@ -66,7 +66,7 @@ def page(title, description, nav_key, body):
 
 # ---------- index.html ----------
 highlights = [
-    ("F", "#375381", "Facets", "Up to 3 full personas, each with its own apps, dock, clock, and calendar, switched with a swipe."),
+    ("F", "#375381", "Facets", "Up to 10 full personas, each with its own apps, dock, clock, and calendar, switched with a swipe or by automatic rules."),
     ("C", "#2C6860", "30+ clock styles", "From minimal typography to shape-based faceted marks, each fully re-themeable."),
     ("A", "#2C7D52", "Smart app drawer", "List or grid, an alphabet rail, and search across apps and contacts."),
     ("W", "#22384F", "Widgets", "A dedicated space for widgets. Drag, resize, and arrange freely."),
@@ -99,7 +99,7 @@ index_body = f'''<section class="hero">
       <span class="eyebrow">Facets</span>
       <h2>Your phone, on switch</h2>
       <p>Set up a Work facet with only the apps you need at your desk. A Personal facet with everything else. A Focus facet with almost nothing at all. Swipe to browse live previews of each, tap to switch instantly.</p>
-      <p>Every facet can override its own apps list, dock, clock style and calendar, or simply inherit the defaults.</p>
+      <p>Every facet can override its own apps list, dock, clock style and calendar, or simply inherit the defaults. Or let your phone switch for you: rules can change facet by schedule, Wi-Fi network, Bluetooth device, headphones or battery level.</p>
     </div>
     <div class="shots single">
       <div class="shot-frame"><img src="assets/screenshots/facets.png" alt="Facet Launcher's facet switcher showing two facets side by side"></div>
@@ -125,10 +125,12 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
     <div class="feature-text">
       <span class="eyebrow">Facets</span>
       <h2>Switch your whole setup in one tap</h2>
-      <p>Up to three facets, each a fully independent launcher configuration: its own favorites, list mode, clock style, and calendar settings. Long-press an empty part of the home screen to browse live preview cards and switch instantly, or drop into Settings to reorder, rename, or fine-tune each one.</p>
+      <p>Up to ten facets, each a fully independent launcher configuration: its own favorites, list layout, clock style, and calendar settings. Swipe left on the home screen to browse live preview cards and switch instantly, or drop into Settings to reorder, rename, or fine-tune each one.</p>
       <ul>
         <li>Live preview cards render each facet's real clock, favorites, and calendar</li>
         <li>Per-facet override for apps list, dock content, clock &amp; calendar style</li>
+        <li>Built-in automation: switch facets by schedule, Wi-Fi network, Bluetooth device, headphones or battery level, and choose what happens when a rule ends</li>
+        <li>Every facet is also an app shortcut, so automation apps can switch it too</li>
       </ul>
     </div>
     <div class="shots single">
@@ -143,6 +145,12 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
       <span class="eyebrow">Home &amp; clock</span>
       <h2>30+ clock styles, fully re-themeable</h2>
       <p>From clean typographic layouts to shape-based marks, every clock template supports its own font, color, weight and alignment. Drag to resize and reposition, or hand-pick a style per facet.</p>
+      <ul>
+        <li>Upcoming calendar events under the clock, from today until noon tomorrow: show one to three, with an optional color bar per calendar</li>
+        <li>An optional media player row with album art, song details, playback controls and a progress bar</li>
+        <li>Swap the clock for any widget, per facet</li>
+        <li>Lay your apps out as a single column, two columns or a grid, and pick squircle, rounded, circle or square icons</li>
+      </ul>
     </div>
     <div class="shots">
       <div class="shot-frame"><img src="assets/screenshots/clock-gallery-2.png" alt="Clock style gallery showing Chip, Duotone Overlap, and Corner Frame templates"></div>
@@ -195,7 +203,7 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
 # ---------- privacy-policy.html ----------
 policy_body = '''<main class="wrap policy policy-main">
   <h1>Facet Launcher Privacy Policy</h1>
-  <p class="updated">Last updated: October 8, 2026</p>
+  <p class="updated">Last updated: October 13, 2026</p>
 
   <div class="summary">
     <strong>In short:</strong> Facet Launcher does not have internet access. Nothing you do in the app - your apps, contacts, calendar, usage patterns, notifications, or settings, ever leaves your device. There are no accounts, no ads, no analytics, and no third-party tracking of any kind.
@@ -212,7 +220,7 @@ policy_body = '''<main class="wrap policy policy-main">
     <li><strong>Usage access</strong> (<code>PACKAGE_USAGE_STATS</code>) - powers the app drawer's optional "Most used" sort, which ranks your installed apps by how often you open them. This ranking is computed on-device each time it's shown and is never stored beyond what's needed to display it, or sent anywhere.</li>
     <li><strong>Calendar</strong> (<code>READ_CALENDAR</code>) - lets the home screen show your upcoming events, if you turn this on in Settings. Calendar data is read directly from your device's calendar provider and displayed locally; it is never copied, stored separately, or transmitted.</li>
     <li><strong>Contacts</strong> (<code>READ_CONTACTS</code>) - powers an optional contact search feature in the app drawer, if you turn it on in Settings. Contact data is queried on-device at search time and never stored or transmitted.</li>
-    <li><strong>Notification access</strong> - powers optional app-icon notification badges. The app reads only which app a notification came from and how many are unread, never notification content, and never stores or transmits this beyond what's needed to draw the badge.</li>
+    <li><strong>Notification access</strong> - powers optional app-icon notification badges and the optional media player on the home screen. For badges, the app reads only which app a notification came from and how many are unread, never notification content. For the media player, it reads the title, artist, album art and playback state of the media that is playing, and whether that app has a media notification showing, so it can draw the player and its controls. None of this is stored beyond what's needed to draw the screen, or transmitted.</li>
     <li><strong>Uninstall shortcut</strong> (<code>REQUEST_DELETE_PACKAGES</code>) - lets you uninstall an app from its long-press menu. This opens Android's own uninstall confirmation dialog; the app never uninstalls anything without your explicit confirmation in that system dialog.</li>
     <li><strong>Expand notification shade</strong> (<code>EXPAND_STATUS_BAR</code>) - lets a swipe-down gesture on the home screen open your notification shade, the same way it would on any home screen.</li>
     <li><strong>Bluetooth</strong> (<code>BLUETOOTH_CONNECT</code>) - used only by the optional facet automation rules, to list your paired devices and to notice when a device you picked connects or disconnects. Android asks you when you choose a Bluetooth rule. The device you pick is saved on your device inside that rule and never transmitted.</li>
