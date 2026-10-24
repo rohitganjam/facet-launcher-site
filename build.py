@@ -190,8 +190,8 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
   <div class="wrap inner">
     <div class="feature-text">
       <span class="eyebrow">Privacy</span>
-      <h2>Nothing leaves your device</h2>
-      <p>Facet Launcher doesn't request internet access at all. There's no server, no account, no analytics, no ads. Everything runs entirely on your phone.</p>
+      <h2>Your data stays on your phone</h2>
+      <p>There's no server, no account, no analytics and no ads. Everything runs on your phone. The one optional exception is weather: if you turn it on, Facet asks a weather service for a forecast for an approximate location, and nothing else leaves your device.</p>
       <p><a href="privacy-policy.html">Read the full privacy policy &rarr;</a></p>
     </div>
     <div class="shots single">
@@ -203,17 +203,17 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
 # ---------- privacy-policy.html ----------
 policy_body = '''<main class="wrap policy policy-main">
   <h1>Facet Launcher Privacy Policy</h1>
-  <p class="updated">Last updated: October 13, 2026</p>
+  <p class="updated">Last updated: October 24, 2026</p>
 
   <div class="summary">
-    <strong>In short:</strong> Facet Launcher does not have internet access. Nothing you do in the app - your apps, contacts, calendar, usage patterns, notifications, or settings, ever leaves your device. There are no accounts, no ads, no analytics, and no third-party tracking of any kind.
+    <strong>In short:</strong> Facet Launcher has no accounts, no ads, no analytics, and no third-party tracking. Nothing you do in the app - your apps, contacts, calendar, usage patterns, notifications, or settings - ever leaves your device. The one exception is the optional weather feature, which is off until you turn it on: when it is on, a rounded, approximate location is sent to a weather service to get your forecast (see "Weather" below).
   </div>
 
   <h2>What this app is</h2>
   <p>Facet Launcher is a home-screen launcher for Android. It replaces your phone's default home screen with app organization, a clock, and calendar widgets, all customizable through facets.</p>
 
   <h2>Data collection and transmission</h2>
-  <p>Facet Launcher does not request the <code>INTERNET</code> permission. The app cannot make network requests, and has no server, backend, or cloud component of any kind. Every feature described below runs entirely on your device.</p>
+  <p>Facet Launcher has no server, backend, or cloud component of its own. It requests the <code>INTERNET</code> permission for one reason only: the optional weather feature described under "Weather" below. While weather is off, the app makes no network requests. Every other feature runs entirely on your device.</p>
 
   <h2>Permissions the app uses, and why</h2>
   <ul>
@@ -224,24 +224,35 @@ policy_body = '''<main class="wrap policy policy-main">
     <li><strong>Uninstall shortcut</strong> (<code>REQUEST_DELETE_PACKAGES</code>) - lets you uninstall an app from its long-press menu. This opens Android's own uninstall confirmation dialog; the app never uninstalls anything without your explicit confirmation in that system dialog.</li>
     <li><strong>Expand notification shade</strong> (<code>EXPAND_STATUS_BAR</code>) - lets a swipe-down gesture on the home screen open your notification shade, the same way it would on any home screen.</li>
     <li><strong>Bluetooth</strong> (<code>BLUETOOTH_CONNECT</code>) - used only by the optional facet automation rules, to list your paired devices and to notice when a device you picked connects or disconnects. Android asks you when you choose a Bluetooth rule. The device you pick is saved on your device inside that rule and never transmitted.</li>
-    <li><strong>Location</strong> (<code>ACCESS_FINE_LOCATION</code>) - Android requires this permission before an app can read the name of a Wi-Fi network. It is used only if you create a facet automation rule for a named Wi-Fi network, to list networks in range and to notice when you connect to the one you picked. Android asks for approximate location alongside it; the app only uses the permission for the network name. The app does not read, store, or transmit your location.</li>
+    <li><strong>Location</strong> (<code>ACCESS_FINE_LOCATION</code>) - Android requires this permission before an app can read the name of a Wi-Fi network. It is used only if you create a facet automation rule for a named Wi-Fi network, to list networks in range and to notice when you connect to the one you picked. Android asks for approximate location alongside it. For this rule the app only uses the permission for the network name, and does not read, store, or transmit your location. Approximate location (<code>ACCESS_COARSE_LOCATION</code>) is also used by the optional weather feature, as described under "Weather".</li>
     <li><strong>Network and Wi-Fi state</strong> (<code>ACCESS_NETWORK_STATE</code>, <code>ACCESS_WIFI_STATE</code>) - lets Wi-Fi automation rules tell whether you are connected to Wi-Fi. These do not give the app internet access.</li>
   </ul>
 
   <h2>Facet Pro purchase</h2>
-  <p>Facet Pro is an optional one-time purchase. It is handled entirely by Google Play: the app asks the Google Play Store app on your phone whether your Google account owns Pro, and Google handles payment, receipts and refunds under its own terms and privacy policy. Facet Launcher never sees your payment details and has no server of its own. The app remembers on your device only whether Pro is unlocked. It still does not request the <code>INTERNET</code> permission.</p>
+  <p>Facet Pro is an optional one-time purchase. It is handled entirely by Google Play: the app asks the Google Play Store app on your phone whether your Google account owns Pro, and Google handles payment, receipts and refunds under its own terms and privacy policy. Facet Launcher never sees your payment details and has no server of its own. The app remembers on your device only whether Pro is unlocked. The purchase itself does not use the app's internet access.</p>
+
+  <h2>Weather</h2>
+  <p>Weather on the clock is optional and off until you turn it on in the app's settings. When it is on:</p>
+  <ul>
+    <li><strong>Forecast.</strong> The app asks MET Norway (the Norwegian Meteorological Institute, <code>api.met.no</code>) for a forecast over HTTPS. The request contains a rounded location (about 1 km), the app's name and version, and, as with any web request, your device's IP address. There is no account, and the app sends no identifier of you or your device.</li>
+    <li><strong>Your location.</strong> If you choose "Use current location", the app asks for approximate location (<code>ACCESS_COARSE_LOCATION</code>) and reads one position when you open the home screen and the forecast is out of date. It never tracks you in the background. If you choose a city by name instead, no location permission is needed.</li>
+    <li><strong>Place names.</strong> To show a place name, the app asks your phone's built-in geocoding service (the Android Geocoder, usually provided by Google Play services) for the name of the rounded position, and when you search for a city, the text you type may go to the same service. If it is not available, the app uses a list of cities stored in the app itself. Facet Launcher does not receive these requests.</li>
+    <li><strong>Stored on your device.</strong> The app keeps the last couple of days of forecast so it can work out today's high and low, your units and your chosen city. This is not sent anywhere and is cleared when your location changes. Your current location is not included in backups.</li>
+    <li><strong>Turning it off</strong> in the app's settings stops all of the above.</li>
+  </ul>
+  <p>Weather data is provided by MET Norway under the CC BY 4.0 license.</p>
 
   <h2>Data storage</h2>
-  <p>Your settings, facets, dock and favorites layout, widget placements, and facet automation rules are stored in a local database on your device, using Android's standard app-private storage. This data is not accessible to other apps and is not transmitted anywhere. Uninstalling Facet Launcher removes it, following normal Android behavior.</p>
+  <p>Your settings, facets, dock and favorites layout, widget placements, and facet automation rules are stored in a local database on your device, using Android's standard app-private storage. This data is not accessible to other apps and is not transmitted anywhere. The weather feature's stored forecast lives in the same place. Uninstalling Facet Launcher removes it, following normal Android behavior.</p>
 
   <h2>Backup and restore</h2>
   <p>If you use the app's backup feature, it creates a JSON file containing your settings and layout, which you choose where to save using Android's own file picker (for example, to your device storage or a cloud storage app you've installed). Facet Launcher does not upload this file anywhere itself. Where it ends up is entirely controlled by you, through the system file picker.</p>
 
   <h2>Third parties</h2>
-  <p>Facet Launcher does not integrate any third-party analytics, advertising, or crash-reporting services. The only outside service involved is Google Play, if you choose to buy Facet Pro. No data is shared with any third party, because no data leaves your device in the first place.</p>
+  <p>Facet Launcher does not integrate any third-party analytics, advertising, or crash-reporting services. The outside services involved are Google Play, if you choose to buy Facet Pro, and, only if you turn weather on, MET Norway for the forecast and your phone's own geocoding service for place names. Nothing else leaves your device, so no other data is shared with any third party.</p>
 
   <h2>Children's privacy</h2>
-  <p>Facet Launcher does not knowingly collect any data from anyone, including children, since the app does not collect or transmit data at all.</p>
+  <p>Facet Launcher does not knowingly collect personal data from anyone, including children. The only data that can leave the device is the optional weather request described above, which contains a rounded location and no personal identifier.</p>
 
   <h2>Changes to this policy</h2>
   <p>If this policy changes, an updated version will be posted at this same URL with a revised "Last updated" date.</p>
@@ -253,7 +264,7 @@ policy_body = '''<main class="wrap policy policy-main">
 pages = {
     "index.html": page("Facet Launcher", "A minimal Android launcher built around how you use your phone. Switch your whole setup in one tap.", "home", index_body + CTA_SECTION),
     "features.html": page("Features — Facet Launcher", "Facets, 30+ clock styles, a smart app drawer, and a dedicated widgets screen.", "features", features_body + CTA_SECTION),
-    "privacy-policy.html": page("Privacy Policy — Facet Launcher", "Facet Launcher has no internet access and collects no data. Read the full privacy policy.", "privacy", policy_body),
+    "privacy-policy.html": page("Privacy Policy — Facet Launcher", "Facet Launcher has no accounts, ads or analytics and keeps your data on your device. Read the full privacy policy.", "privacy", policy_body),
 }
 
 for name, content in pages.items():
