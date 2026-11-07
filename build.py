@@ -1,6 +1,10 @@
 import os
+import sys
+from html import escape
 
 ROOT = "/Volumes/NVME/repo/facet-launcher-site"
+sys.path.insert(0, ROOT)
+from site_config import TRADER, TERMS_LAST_UPDATED
 with open(f"{ROOT}/assets/mark.svg.txt") as f:
     MARK_PATHS = f.read().strip()
 
@@ -18,16 +22,20 @@ def nav(active):
       {link("index.html", "Home", "Home", "home")}
       {link("features.html", "Features", "Features", "features")}
       {link("privacy-policy.html", "Privacy Policy", "Privacy", "privacy")}
+      {link("terms.html", "Terms of Service", "Terms", "terms")}
     </nav>
   </div>
 </header>'''
 
 DISCORD_INVITE = "https://discord.gg/BRjwWZ23E"
+PLAY_URL = "https://play.google.com/store/apps/details?id=com.facetlauncher.app"
+PLAY_BADGE = f'<a class="play-badge" href="{PLAY_URL}"><img src="assets/google-play-badge.svg" alt="Get it on Google Play"></a>'
 
 CTA_SECTION = f'''<section class="closing-cta">
   <div class="wrap">
     <h2>Join the community</h2>
     <p>Facet Launcher is in active development. Come chat, share feedback, or follow along on Discord.</p>
+    <div class="play-row">{PLAY_BADGE}</div>
     <div class="cta-row">
       <a class="btn btn-primary" href="{DISCORD_INVITE}">Join Discord</a>
     </div>
@@ -40,6 +48,7 @@ FOOTER = f'''<footer class="site-footer">
     <div>
       <a href="{DISCORD_INVITE}">Discord</a>
       <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
     </div>
   </div>
 </footer>'''
@@ -82,6 +91,7 @@ index_body = f'''<section class="hero">
     <div class="mark" style="margin:0 auto 24px">{mark_svg(96)}</div>
     <h1>A launcher built around how you use your phone</h1>
     <p class="tagline">Facet Launcher is a fast, minimal Android home screen that adapts to how you actually use your phone - work, personal or focus, each its own facet.</p>
+    <div class="play-row">{PLAY_BADGE}</div>
     <div class="cta-row">
       <a class="btn btn-primary" href="features.html">See features</a>
       <a class="btn btn-secondary" href="{DISCORD_INVITE}">Join Discord</a>
@@ -261,7 +271,66 @@ policy_body = '''<main class="wrap policy policy-main">
   <p>Questions about this policy can be sent to the developer via the <a href="https://discord.gg/BRjwWZ23E">Facet Launcher Discord server</a>.</p>
 </main>'''
 
+# ---------- terms.html ----------
+missing = []
+
+def req(key):
+    v = TRADER[key]
+    if isinstance(v, list):
+        v = ", ".join(v)
+    if not v:
+        missing.append(key)
+        return "[NOT SET]"
+    return escape(v)
+
+def opt_row(label, key):
+    v = TRADER[key]
+    return f"<li><strong>{label}:</strong> {escape(v)}</li>" if v else ""
+
+terms_body = f'''<main class="wrap policy policy-main">
+  <h1>Facet Launcher Terms of Service</h1>
+  <p class="updated">Last updated: {escape(TERMS_LAST_UPDATED)}</p>
+
+  <div class="summary">
+    <strong>In short:</strong> Facet Launcher is free to use. Facet Pro is an optional one-time purchase made through Google Play. You can keep using the app as long as you follow these terms, and your legal rights as a consumer are not affected.
+  </div>
+
+  <h2>Using the app</h2>
+  <p>You are granted a personal, non-exclusive, non-transferable licence to install and use Facet Launcher on your own Android devices. You may not copy, resell, decompile or redistribute the app except where the law allows it regardless of this term. Facet Launcher is installed through Google Play, and Google Play's terms also apply to that installation.</p>
+
+  <h2>Facet Pro purchase</h2>
+  <p>Facet Pro is an optional one-time purchase that unlocks additional features. The price shown in Google Play at the time of purchase is the price you pay, including any taxes Google Play adds. Payment, receipts, refunds and any withdrawal rights are handled by Google Play under its own terms and refund policy. The developer does not receive your payment details. Facet Pro is tied to your Google account and can be restored on other devices signed in to the same account.</p>
+
+  <h2>Your consumer rights</h2>
+  <p>If you are a consumer in the European Union, the United Kingdom or elsewhere, you have legal rights that these terms do not remove. These include the right to digital content that matches its description and works as it should, and, where it applies, a right to withdraw from the purchase within the period set by law. Nothing in these terms limits any right that cannot be limited by contract.</p>
+
+  <h2>Features that depend on other services</h2>
+  <p>Some features rely on services we do not control, such as Google Play for purchases and MET Norway for the optional weather forecast. They may change or be unavailable, and that can affect those features. See the <a href="privacy-policy.html">Privacy Policy</a> for how data is handled.</p>
+
+  <h2>Changes to the app and to Facet Pro</h2>
+  <p>The app is in active development. Features may be added, changed or removed. We will not remove a Facet Pro feature you have paid for without good reason, such as a legal requirement or a change in the Android platform that makes it unworkable.</p>
+
+  <h2>Warranty and liability</h2>
+  <p>The app is provided as it is, to the extent the law allows. The developer is not liable for loss that was not reasonably foreseeable, or for loss of data stored outside the app. Nothing in these terms limits liability for death or personal injury caused by negligence, for fraud, or for anything else that cannot be limited by law.</p>
+
+  <h2>Governing law</h2>
+  <p>These terms are governed by the laws of {req("governing_law_country")}. If you are a consumer, you also keep the protection of the mandatory consumer laws of the country where you live, and you may bring a claim in the courts of that country.</p>
+
+  <h2>Changes to these terms</h2>
+  <p>If these terms change, the updated version will be posted at this same URL with a revised "Last updated" date. Changes do not apply to purchases you made before the change.</p>
+
+  <h2>Contact and who provides the app</h2>
+  <p>Facet Launcher is offered by the trader below, who acts in a professional capacity when selling Facet Pro. The full trader details are also shown on the Facet Launcher page in Google Play. Questions about these terms can be sent to the email below or through the <a href="{DISCORD_INVITE}">Facet Launcher Discord server</a>.</p>
+  <ul>
+    <li><strong>Name:</strong> {req("legal_name")}</li>
+    <li><strong>Email:</strong> {req("email")}</li>
+    {opt_row("VAT number", "vat_number")}
+    {opt_row("Business registration number", "business_registration_number")}
+  </ul>
+</main>'''
+
 pages = {
+    "terms.html": page("Terms of Service — Facet Launcher", "The terms for using Facet Launcher and buying Facet Pro, and who the trader is.", "terms", terms_body),
     "index.html": page("Facet Launcher", "A minimal Android launcher built around how you use your phone. Switch your whole setup in one tap.", "home", index_body + CTA_SECTION),
     "features.html": page("Features — Facet Launcher", "Facets, 30+ clock styles, a smart app drawer, and a dedicated widgets screen.", "features", features_body + CTA_SECTION),
     "privacy-policy.html": page("Privacy Policy — Facet Launcher", "Facet Launcher has no accounts, ads or analytics and keeps your data on your device. Read the full privacy policy.", "privacy", policy_body),
@@ -271,3 +340,6 @@ for name, content in pages.items():
     with open(f"{ROOT}/{name}", "w") as f:
         f.write(content)
     print("wrote", name)
+
+if missing:
+    print(f"WARNING: fill in site_config.py before publishing; not set: {', '.join(sorted(set(missing)))}")
