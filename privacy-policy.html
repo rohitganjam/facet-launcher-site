@@ -23,17 +23,17 @@
 </header>
 <main class="wrap policy policy-main">
   <h1>Facet Launcher Privacy Policy</h1>
-  <p class="updated">Last updated: October 24, 2026</p>
+  <p class="updated">Last updated: November 13, 2026</p>
 
   <div class="summary">
-    <strong>In short:</strong> Facet Launcher has no accounts, no ads, no analytics, and no third-party tracking. Nothing you do in the app - your apps, contacts, calendar, usage patterns, notifications, or settings - ever leaves your device. The one exception is the optional weather feature, which is off until you turn it on: when it is on, a rounded, approximate location is sent to a weather service to get your forecast (see "Weather" below).
+    <strong>In short:</strong> Facet Launcher has no accounts, no ads, no analytics, and no third-party tracking. Nothing you do in the app - your apps, contacts, calendar, usage patterns, notifications, or settings - ever leaves your device. There are two optional exceptions. Weather is off until you turn it on: when it is on, a rounded, approximate location is sent to a weather service to get your forecast (see "Weather" below). Daily photos fetches Bing and Spotlight photos from Peapix when you open it, or once a day if you turn on Daily wallpaper (see "Daily photos and daily wallpaper" below).
   </div>
 
   <h2>What this app is</h2>
   <p>Facet Launcher is a home-screen launcher for Android. It replaces your phone's default home screen with app organization, a clock, and calendar widgets, all customizable through facets.</p>
 
   <h2>Data collection and transmission</h2>
-  <p>Facet Launcher has no server, backend, or cloud component of its own. It requests the <code>INTERNET</code> permission for one reason only: the optional weather feature described under "Weather" below. While weather is off, the app makes no network requests. Every other feature runs entirely on your device.</p>
+  <p>Facet Launcher has no server, backend, or cloud component of its own. It requests the <code>INTERNET</code> permission for two optional features only: weather and Daily photos, described below. While weather is off, Daily photos is closed and Daily wallpaper is off, the app makes no network requests. Every other feature runs entirely on your device.</p>
 
   <h2>Permissions the app uses, and why</h2>
   <ul>
@@ -62,6 +62,16 @@
   </ul>
   <p>Weather data is provided by MET Norway under the CC BY 4.0 license.</p>
 
+  <h2>Daily photos and daily wallpaper</h2>
+  <p>Daily photos on the wallpaper screen is optional. When you open it, the app asks Peapix (<code>peapix.com</code>) over HTTPS for the day's Bing and Windows Spotlight photo lists and their preview images, at most once a day, and downloads a full-size photo only when you tap it. Images are only downloaded from Peapix's own servers.</p>
+  <ul>
+    <li><strong>What is sent.</strong> Your device's IP address, as with any web request, the app's name and version, and, for Bing, a two-letter country code taken from your phone's region setting, so you see that country's photo. There is no account, and the app sends no identifier of you or your device, nothing about your apps, and none of your settings.</li>
+    <li><strong>Daily wallpaper.</strong> If you turn on Daily wallpaper, the first time you open Facet each day the app makes the same request to Peapix and downloads one full-size photo to set as your wallpaper. It only starts while you are using Facet, never in the background on its own, although a download already started may finish after you switch to another app. With "Wi-Fi only" on (the default) it waits for an unmetered network, unless you choose to use mobile data once when turning it on. It also waits while Battery Saver is on.</li>
+    <li><strong>Stored on your device.</strong> The photo lists, previews and the photo waiting to be set are kept in the app's cache on your phone, and the Daily wallpaper settings and the photos it has already used are kept in app-private storage. None of this is sent anywhere or included in backups.</li>
+    <li><strong>Turning it off.</strong> Not opening Daily photos and turning Daily wallpaper off stops all of the above.</li>
+  </ul>
+  <p>Photos belong to their photographers and agencies and are shown with their credit. Peapix's own terms and privacy policy apply to its service.</p>
+
   <h2>Data storage</h2>
   <p>Your settings, facets, dock and favorites layout, widget placements, and facet automation rules are stored in a local database on your device, using Android's standard app-private storage. This data is not accessible to other apps and is not transmitted anywhere. The weather feature's stored forecast lives in the same place. Uninstalling Facet Launcher removes it, following normal Android behavior.</p>
 
@@ -69,10 +79,10 @@
   <p>If you use the app's backup feature, it creates a JSON file containing your settings and layout, which you choose where to save using Android's own file picker (for example, to your device storage or a cloud storage app you've installed). Facet Launcher does not upload this file anywhere itself. Where it ends up is entirely controlled by you, through the system file picker.</p>
 
   <h2>Third parties</h2>
-  <p>Facet Launcher does not integrate any third-party analytics, advertising, or crash-reporting services. The outside services involved are Google Play, if you choose to buy Facet Pro, and, only if you turn weather on, MET Norway for the forecast and your phone's own geocoding service for place names. Nothing else leaves your device, so no other data is shared with any third party.</p>
+  <p>Facet Launcher does not integrate any third-party analytics, advertising, or crash-reporting services. The outside services involved are Google Play, if you choose to buy Facet Pro, only if you turn weather on, MET Norway for the forecast and your phone's own geocoding service for place names, and, only if you open Daily photos or turn on Daily wallpaper, Peapix for the photos. Nothing else leaves your device, so no other data is shared with any third party.</p>
 
   <h2>Children's privacy</h2>
-  <p>Facet Launcher does not knowingly collect personal data from anyone, including children. The only data that can leave the device is the optional weather request described above, which contains a rounded location and no personal identifier.</p>
+  <p>Facet Launcher does not knowingly collect personal data from anyone, including children. The only data that can leave the device is the optional weather request, which contains a rounded location, and the optional Daily photos requests, which contain at most a country code. Neither contains a personal identifier.</p>
 
   <h2>Changes to this policy</h2>
   <p>If this policy changes, an updated version will be posted at this same URL with a revised "Last updated" date.</p>
