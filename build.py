@@ -213,7 +213,7 @@ features_body = f'''<section class="hero" style="padding:56px 24px 24px">
 # ---------- privacy-policy.html ----------
 policy_body = '''<main class="wrap policy policy-main">
   <h1>Facet Launcher Privacy Policy</h1>
-  <p class="updated">Last updated: October 24, 2026</p>
+  <p class="updated">Last updated: November 15, 2026</p>
 
   <div class="summary">
     <strong>In short:</strong> Facet Launcher has no accounts, no ads, no analytics, and no third-party tracking. Nothing you do in the app - your apps, contacts, calendar, usage patterns, notifications, or settings - ever leaves your device. The one exception is the optional weather feature, which is off until you turn it on: when it is on, a rounded, approximate location is sent to a weather service to get your forecast (see "Weather" below).
@@ -260,6 +260,7 @@ policy_body = '''<main class="wrap policy policy-main">
 
   <h2>Third parties</h2>
   <p>Facet Launcher does not integrate any third-party analytics, advertising, or crash-reporting services. The outside services involved are Google Play, if you choose to buy Facet Pro, and, only if you turn weather on, MET Norway for the forecast and your phone's own geocoding service for place names. Nothing else leaves your device, so no other data is shared with any third party.</p>
+  <p>If a search in the app drawer finds nothing and you tap "Search Play Store", the words you typed are handed to the Play Store app to search with (or to another app store, or your browser for Google Play's website, if there is no Play Store). That app handles the search under its own privacy policy. Facet Launcher sends nothing itself.</p>
 
   <h2>Children's privacy</h2>
   <p>Facet Launcher does not knowingly collect personal data from anyone, including children. The only data that can leave the device is the optional weather request described above, which contains a rounded location and no personal identifier.</p>
