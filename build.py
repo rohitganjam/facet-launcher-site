@@ -265,6 +265,9 @@ policy_body = '''<main class="wrap policy policy-main">
   <h2>Data storage</h2>
   <p>Your settings, facets, dock and favorites layout, widget placements, and facet automation rules are stored in a local database on your device, using Android's standard app-private storage. This data is not accessible to other apps and is not transmitted anywhere. The weather feature's stored forecast lives in the same place. Uninstalling Facet Launcher removes it, following normal Android behavior.</p>
 
+  <h2>App Vault</h2>
+  <p>The App Vault is an optional list of apps you hide behind a 4-digit PIN. The list of hidden apps and a scrambled (salted, hashed) form of your PIN are kept in app-private storage on your phone, with the hash made using a key held by Android's secure hardware where the phone has it. They are never transmitted, and they are left out of Android's own backups, device transfers and the app's backup file, so a restored phone starts with no vault. The PIN only hides apps inside Facet Launcher: the apps stay installed and can still be opened from other launchers.</p>
+
   <h2>Backup and restore</h2>
   <p>If you use the app's backup feature, it creates a JSON file containing your settings and layout, which you choose where to save using Android's own file picker (for example, to your device storage or a cloud storage app you've installed). Facet Launcher does not upload this file anywhere itself. Where it ends up is entirely controlled by you, through the system file picker.</p>
 
